@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enginsight Core - Live Threat Detection | IDS/IPS + FIM + CVE</title>
+<meta name="description" content="Continuous monitoring of your servers and networks. Network IDS, File Integrity Monitoring, CVE scanning. 24/7. Made in Germany.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/core.css">
+</head>
+<body>
+<nav class="eng-nav">
+  <div class="eng-nav-inner">
+    <a class="eng-nav-logo" href="../index.html">
+      <span class="eng-nav-logo-mark">
+        <img class="eng-nav-logo-img" src="../assets/images/Logo.svg" alt="Enginsight">
+      </span>
+    </a>
+    <div class="eng-nav-links">
+      <button class="eng-nav-link active" data-dropdown="dd-products">
+        Products <span class="eng-nav-chevron"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="eng-dropdown wide" id="dd-products">
+          <a class="eng-dd-item" href="./" style="background:var(--gray-1)"><div class="eng-dd-icon pink"><svg viewBox="0 0 16 16" fill="none" stroke="#E8195A" stroke-width="1.4" stroke-linecap="round"><path d="M8 2L13 4.5V8C13 11.5 10.5 13.5 8 14.5c-2.5-1-5-3-5-6.5V4.5L8 2z"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title" style="color:var(--pink)">Core</span><span class="eng-dd-sub">Current page</span></div></a>
+          <a class="eng-dd-item" href="../index.html"><div class="eng-dd-icon blue"><svg viewBox="0 0 16 16" fill="none" stroke="#5B4FE8" stroke-width="1.4" stroke-linecap="round"><path d="M2 5h12M2 8h12M2 11h8"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">SIEM</span><span class="eng-dd-sub">Event correlation & log retention</span></div></a>
+          <a class="eng-dd-item" href="../index.html"><div class="eng-dd-icon green"><svg viewBox="0 0 16 16" fill="none" stroke="#1E7A3C" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M3 14c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">MDR</span><span class="eng-dd-sub">24/7 SOC response</span></div></a>
+          <hr class="eng-dd-divider">
+          <a class="eng-dd-item" href="../pages/pentesting.html"><div class="eng-dd-icon amber"><svg viewBox="0 0 16 16" fill="none" stroke="#B25E09" stroke-width="1.4" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M12 12l3 3"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">Pentesting</span><span class="eng-dd-sub">Find vulnerabilities first</span></div></a>
+          <a class="eng-dd-item" href="../index.html"><div class="eng-dd-icon gray"><svg viewBox="0 0 16 16" fill="none" stroke="#5C5C54" stroke-width="1.4" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M6 8h4M8 6v4"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">Platform overview</span><span class="eng-dd-sub">How it all fits together</span></div></a>
+        </div>
+      </button>
+      <button class="eng-nav-link" data-dropdown="dd-solutions">
+        Solutions <span class="eng-nav-chevron"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="eng-dropdown" id="dd-solutions">
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon amber" style="font-size:16px">⚡</div><div class="eng-dd-text"><span class="eng-dd-title">Energy & KRITIS</span><span class="eng-dd-sub">SCADA & NIS2 compliance</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon pink" style="font-size:16px">🏥</div><div class="eng-dd-text"><span class="eng-dd-title">Healthcare</span><span class="eng-dd-sub">Medical devices & DSGVO</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon blue" style="font-size:16px">🏭</div><div class="eng-dd-text"><span class="eng-dd-title">Manufacturing</span><span class="eng-dd-sub">OT/IT & TISAX</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon teal" style="font-size:16px">🏛️</div><div class="eng-dd-text"><span class="eng-dd-title">Public Sector</span><span class="eng-dd-sub">BSI & NIS2 ready</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon green" style="font-size:16px">🏦</div><div class="eng-dd-text"><span class="eng-dd-title">Finance</span><span class="eng-dd-sub">DORA & BaFin</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon gray" style="font-size:16px">📦</div><div class="eng-dd-text"><span class="eng-dd-title">E-Commerce & Logistics</span><span class="eng-dd-sub">PCI-DSS & DDoS</span></div></a>
+        </div>
+      </button>
+      <button class="eng-nav-link" data-dropdown="dd-compliance">
+        Compliance <span class="eng-nav-chevron"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="eng-dropdown" id="dd-compliance">
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon pink"><svg viewBox="0 0 16 16" fill="none" stroke="#E8195A" stroke-width="1.4" stroke-linecap="round"><path d="M8 2L13 4.5V8C13 11.5 10.5 13.5 8 14.5c-2.5-1-5-3-5-6.5V4.5L8 2z"/><path d="M5.5 8l2 2 3.5-3.5"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">NIS2</span><span class="eng-dd-sub">Technical measures mapping</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon blue"><svg viewBox="0 0 16 16" fill="none" stroke="#5B4FE8" stroke-width="1.4" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5.5 8l2 2 3.5-3.5"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">ISO 27001</span><span class="eng-dd-sub">Annex A control evidence</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon amber"><svg viewBox="0 0 16 16" fill="none" stroke="#B25E09" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">DORA</span><span class="eng-dd-sub">Financial sector resilience</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon teal"><svg viewBox="0 0 16 16" fill="none" stroke="#0F6E56" stroke-width="1.4" stroke-linecap="round"><path d="M2 12l3.5-3.5 3 2.5L11 8l4-5"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">TISAX</span><span class="eng-dd-sub">Automotive supply chain</span></div></a>
+        </div>
+      </button>
+      <a class="eng-nav-link" href="/partner-finden">Partners</a>
+      <button class="eng-nav-link" data-dropdown="dd-resources">
+        Resources <span class="eng-nav-chevron"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="eng-dropdown" id="dd-resources">
+          <a class="eng-dd-item" href="/whitepapers"><div class="eng-dd-icon pink"><svg viewBox="0 0 16 16" fill="none" stroke="#E8195A" stroke-width="1.4" stroke-linecap="round"><rect x="3" y="2" width="10" height="13" rx="1.5"/><path d="M6 6h4M6 9h4M6 12h2.5"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">Whitepapers</span><span class="eng-dd-sub">Technical guides & reports</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon green"><svg viewBox="0 0 16 16" fill="none" stroke="#1E7A3C" stroke-width="1.4" stroke-linecap="round"><path d="M2 12l3.5-3.5 3 2.5L11 8l4-5"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">Case Studies</span><span class="eng-dd-sub">Real customer results</span></div></a>
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon blue"><svg viewBox="0 0 16 16" fill="none" stroke="#5B4FE8" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M6 8h4M9 6l2 2-2 2"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">Partner Webinars</span><span class="eng-dd-sub">Live & on-demand</span></div></a>
+          <hr class="eng-dd-divider">
+          <a class="eng-dd-item" href="#"><div class="eng-dd-icon gray"><svg viewBox="0 0 16 16" fill="none" stroke="#5C5C54" stroke-width="1.4" stroke-linecap="round"><path d="M2 5h12M2 8h12M2 11h8"/></svg></div><div class="eng-dd-text"><span class="eng-dd-title">Docs</span><span class="eng-dd-sub">API & integration reference</span></div></a>
+        </div>
+      </button>
+    </div>
+    <div class="eng-nav-actions">
+      <div class="eng-nav-lang">EN <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:.4;margin-left:2px"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="eng-btn-ghost" href="#">Log in</a>
+      <a class="eng-btn-cta" href="/demo">Request a demo</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="core-hero">
+  <div class="core-hero-pattern" aria-hidden="true"></div>
+  <div class="core-hero-grid">
+    <div class="core-hero-copy reveal">
+      <div class="core-hero-kicker">Enginsight core</div>
+      <h1 class="core-hero-title">Live Threat Detection for Your<br>Critical Infrastructure</h1>
+      <div class="core-hero-body">
+        <p>Quarterly pentests are outdated before the ink is dry. Your critical infrastructure – ERP servers, production systems, databases – needs continuous monitoring, not isolated snapshots.</p>
+      </div>
+      <div class="core-hero-trust" aria-label="trust signals">
+        <div class="core-trust-item"><span class="core-trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2L13 4.5V8C13 11.5 10.5 13.5 8 14.5c-2.5-1-5-3-5-6.5V4.5L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 8.1l1.5 1.5L10.5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>ISO 27001 certified</span></div>
+        <div class="core-trust-item"><span class="core-trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2L13 4.5V8C13 11.5 10.5 13.5 8 14.5c-2.5-1-5-3-5-6.5V4.5L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 8.1l1.5 1.5L10.5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>TUV-tested</span></div>
+        <div class="core-trust-item"><span class="core-trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2L13 4.5V8C13 11.5 10.5 13.5 8 14.5c-2.5-1-5-3-5-6.5V4.5L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 8.1l1.5 1.5L10.5 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Results in 48-72 hrs</span></div>
+      </div>
+      <div class="core-hero-actions">
+        <a class="btn-pink lg" href="/demo">Book a demo</a>
+        <a class="btn-outline lg" href="/whitepapers">Technical Whitepaper</a>
+        <a class="core-inline-link dark" href="/partner-finden">Find a partner</a>
+      </div>
+    </div>
+    <div class="core-hero-visual reveal reveal-delay-2" id="core-hero-visual">
+      <div class="core-hero-shot">
+        <img class="core-hero-shot-dashboard" src="../assets/images/Companies/Core hero image.svg" alt="Enginsight Core dashboard interface">
+      </div>
+    </div>
+  </div>
+  <div class="core-hero-lines" aria-hidden="true">
+    <img src="../assets/images/Lines.svg" alt="">
+  </div>
+</section>
+
+<section class="core-feature-intro">
+  <div class="container reveal text-center">
+    <div class="section-label" style="justify-content:center">Technical foundation</div>
+    <h2 class="section-h2">What runs technically: Four pillars of continuous monitoring</h2>
+  </div>
+</section>
+
+<section class="feat-section core-feature-section">
+  <div class="feat-inner">
+    <div class="feat-copy reveal">
+      <div class="feat-eyebrow">Network IDS/IPS</div>
+      <h3 class="feat-h3">Network-based Intrusion Detection & Prevention (IDS/IPS)</h3>
+      <p class="feat-sub">Enginsight Core monitors your entire network traffic in real time – internally between systems and externally to the internet.</p>
+      <div class="core-bullets">
+        <div class="core-bullets-label">What is detected</div>
+        <div class="feat-list">
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Port scans and reconnaissance</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Brute-force attacks across SSH, RDP and VPN</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Lateral movement between systems</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Command & control communication and data exfiltration attempts</div>
+        </div>
+      </div>
+      <div class="core-example"><strong>Example:</strong> A laptop starts scanning Port 445 (SMB) on all servers at 11:47 PM. Core detects the pattern, classifies it as reconnaissance and alerts immediately.</div>
+    </div>
+    <div class="feat-visual reveal reveal-delay-1">
+      <div class="core-visual-card browser-wrap">
+        <div class="browser-bar">
+          <div class="b-dot b-dot-r"></div><div class="b-dot b-dot-y"></div><div class="b-dot b-dot-g"></div>
+          <div class="b-url">Core / Network IDS / Detection stream</div>
+        </div>
+        <div class="core-app core-app-grid">
+          <div class="core-app-header">
+            <div class="core-app-title">Reconnaissance graph</div>
+            <div class="core-app-pill">Real-time</div>
+          </div>
+          <div class="core-node-map">
+            <div class="core-node core-node-source">Office laptop</div>
+            <div class="core-node core-node-target">ERP server</div>
+            <div class="core-node core-node-target">SQL cluster</div>
+            <div class="core-node core-node-target">File server</div>
+            <div class="core-scan-beam beam-one"></div>
+            <div class="core-scan-beam beam-two"></div>
+            <div class="core-scan-beam beam-three"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feat-section core-feature-section alt">
+  <div class="feat-inner flip">
+    <div class="feat-copy reveal reveal-delay-1">
+      <div class="feat-eyebrow">File Integrity Monitoring</div>
+      <h3 class="feat-h3">File Integrity Monitoring (FIM)</h3>
+      <p class="feat-sub">Protects critical system files, configurations and application binaries from unauthorized changes.</p>
+      <div class="core-bullets">
+        <div class="core-bullets-label">What is monitored</div>
+        <div class="feat-list">
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Operating system files like <code>/etc/passwd</code> and registry entries</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>SSH and RDP configurations</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Webserver and database configurations</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Certificates, keys and critical application binaries</div>
+        </div>
+      </div>
+      <div class="core-example"><strong>Example:</strong> An attacker creates a new user. FIM detects the change to <code>/etc/passwd</code> in real time and alerts – before the account is even used.</div>
+    </div>
+    <div class="feat-visual reveal">
+      <div class="core-visual-card browser-wrap">
+        <div class="browser-bar">
+          <div class="b-dot b-dot-r"></div><div class="b-dot b-dot-y"></div><div class="b-dot b-dot-g"></div>
+          <div class="b-url">Core / File integrity / Change tracking</div>
+        </div>
+        <div class="core-app core-app-files">
+          <div class="core-file-row danger"><span>/etc/passwd</span><span>modified</span><span>01:34</span></div>
+          <div class="core-file-row"><span>sshd_config</span><span>unchanged</span><span>OK</span></div>
+          <div class="core-file-row"><span>postgresql.conf</span><span>unchanged</span><span>OK</span></div>
+          <div class="core-file-row"><span>nginx.conf</span><span>unchanged</span><span>OK</span></div>
+          <div class="core-diff-card">
+            <div class="core-panel-label">Unauthorized change detected</div>
+            <code>+ attacker:x:1004:1004:/home/attacker:/bin/bash</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feat-section core-feature-section">
+  <div class="feat-inner">
+    <div class="feat-copy reveal">
+      <div class="feat-eyebrow">Continuous Vulnerability Assessment</div>
+      <h3 class="feat-h3">Continuous Vulnerability Assessment</h3>
+      <p class="feat-sub">Daily updated scanning against the latest CVEs. Not quarterly like pentests, but continuously.</p>
+      <div class="core-bullets">
+        <div class="core-bullets-label">What is scanned</div>
+        <div class="feat-list">
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Operating system versions and patch levels</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Installed software, libraries and open services</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Web applications, APIs and SSL/TLS configurations</div>
+        </div>
+      </div>
+      <div class="core-example"><strong>Example:</strong> A critical Apache CVE is published Monday. Enginsight scans automatically and reports Tuesday: “3 of your web servers affected, CVSS 9.8, exploit available, patch available.”</div>
+    </div>
+    <div class="feat-visual reveal reveal-delay-1">
+      <div class="core-visual-card browser-wrap">
+        <div class="browser-bar">
+          <div class="b-dot b-dot-r"></div><div class="b-dot b-dot-y"></div><div class="b-dot b-dot-g"></div>
+          <div class="b-url">Core / Vulnerability assessment / Daily sync</div>
+        </div>
+        <div class="core-app core-app-cve">
+          <div class="core-cve-head">
+            <span>Top affected assets</span>
+            <span>Tuesday 06:12</span>
+          </div>
+          <div class="core-cve-list">
+            <div class="core-cve-row"><strong>Apache HTTP Server</strong><span>3 servers</span><em>CVSS 9.8</em></div>
+            <div class="core-cve-row"><strong>OpenSSL</strong><span>5 systems</span><em>CVSS 8.7</em></div>
+            <div class="core-cve-row"><strong>PostgreSQL</strong><span>2 instances</span><em>CVSS 8.2</em></div>
+          </div>
+          <div class="core-cve-note">Exploit available · Patch available · Prioritize internet-facing systems first</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feat-section core-feature-section alt">
+  <div class="feat-inner flip">
+    <div class="feat-copy reveal reveal-delay-1">
+      <div class="feat-eyebrow">System & Service Monitoring</div>
+      <h3 class="feat-h3">System & Service Monitoring</h3>
+      <p class="feat-sub">Monitors availability and performance. Detects anomalies indicating compromise.</p>
+      <div class="core-bullets">
+        <div class="core-bullets-label">What is monitored</div>
+        <div class="feat-list">
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>CPU, RAM, disk usage and service availability</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Network traffic volume and process lists</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Unexpected processes, logins and user activity</div>
+        </div>
+      </div>
+      <div class="core-example"><strong>Example:</strong> A compromised server transmits large amounts of data at night. System monitoring detects: “Outgoing traffic 50x higher than baseline, CPU load unusual.”</div>
+    </div>
+    <div class="feat-visual reveal">
+      <div class="core-visual-card browser-wrap">
+        <div class="browser-bar">
+          <div class="b-dot b-dot-r"></div><div class="b-dot b-dot-y"></div><div class="b-dot b-dot-g"></div>
+          <div class="b-url">Core / Health monitoring / Service anomalies</div>
+        </div>
+        <div class="core-app core-app-metrics">
+          <div class="core-metric"><span>CPU load</span><strong>81%</strong><div class="core-meter"><i style="width:81%"></i></div></div>
+          <div class="core-metric"><span>Outgoing traffic</span><strong>50x</strong><div class="core-meter"><i style="width:100%"></i></div></div>
+          <div class="core-metric"><span>Service availability</span><strong>94%</strong><div class="core-meter"><i style="width:94%"></i></div></div>
+          <div class="core-metric"><span>Unexpected processes</span><strong>3</strong><div class="core-meter"><i style="width:42%"></i></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-dashboard-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center">Dashboard</div>
+      <h2 class="section-h2">What you see in the Core dashboard</h2>
+    </div>
+    <div class="core-dashboard-showcase reveal reveal-delay-1" id="core-dashboard-showcase">
+      <div class="core-dashboard-browser browser-wrap">
+        <div class="browser-bar">
+          <div class="b-dot b-dot-r"></div><div class="b-dot b-dot-y"></div><div class="b-dot b-dot-g"></div>
+          <div class="b-url">Core / Dashboard / live overview</div>
+          <div class="b-actions"><span class="b-action">Export</span><span class="b-action">Filter</span></div>
+        </div>
+        <div class="core-dashboard-body">
+          <div class="core-dash-timeline">
+            <div class="core-panel-label">Live-Timeline 24h</div>
+            <div class="core-dash-entry"><span>Reconnaissance cluster triggered</span><em>23:47</em></div>
+            <div class="core-dash-entry"><span>Brute-force pattern escalated</span><em>00:12</em></div>
+            <div class="core-dash-entry"><span>File integrity change on db-server-prod</span><em>01:34</em></div>
+            <div class="core-dash-entry"><span>Apache CVE exploit available</span><em>06:05</em></div>
+          </div>
+          <div class="core-dash-side">
+            <div class="core-dash-side-card">
+              <div class="core-panel-label">Systems monitored</div>
+              <strong>184</strong>
+              <span>Endpoints, servers and critical services</span>
+            </div>
+            <div class="core-dash-side-card">
+              <div class="core-panel-label">Trend-Analyse</div>
+              <div class="core-trend-bars compact" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span>90-day security posture trending upward</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="core-highlight-grid">
+        <div class="core-highlight-card"><strong>Live-Timeline 24h</strong><span>Chronological security events, fully filterable</span></div>
+        <div class="core-highlight-card"><strong>Kritische CVEs</strong><span>Top 10 with CVSS, exploit status and patch availability</span></div>
+        <div class="core-highlight-card"><strong>Systems monitored</strong><span>Endpoints, servers and health status at a glance</span></div>
+        <div class="core-highlight-card"><strong>Trend-Analyse</strong><span>Security posture development over 90 days</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-infra-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center">Coverage</div>
+      <h2 class="section-h2">For which critical infrastructure is Core suitable?</h2>
+    </div>
+    <div class="core-icon-grid reveal reveal-delay-1">
+      <div class="core-icon-card"><div class="core-icon-badge">ERP</div><strong>ERP-Systeme</strong><span>SAP, Navision, Sage, Oracle</span></div>
+      <div class="core-icon-card"><div class="core-icon-badge">OT</div><strong>Produktionssysteme</strong><span>MES, SCADA, SPS controls</span></div>
+      <div class="core-icon-card"><div class="core-icon-badge">DB</div><strong>Datenbanken</strong><span>SQL Server, PostgreSQL, MySQL, file servers</span></div>
+      <div class="core-icon-card"><div class="core-icon-badge">MED</div><strong>Medizinische Systeme</strong><span>HIS, PACS and medical devices</span></div>
+      <div class="core-icon-card"><div class="core-icon-badge">ADM</div><strong>Verwaltungs-Software</strong><span>Citizen portals and administration apps</span></div>
+      <div class="core-icon-card"><div class="core-icon-badge">NET</div><strong>Netzwerk-Infrastruktur</strong><span>Firewall, VPN, DNS and Active Directory</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="core-timeline-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center">Development timeline</div>
+      <h2 class="section-h2">Typical development: From Core to full-stack</h2>
+    </div>
+    <div class="core-phases reveal reveal-delay-1">
+      <div class="core-phase-card">
+        <div class="core-phase-period">Months 1-6</div>
+        <h3 class="feat-h3">Core is running</h3>
+        <div class="feat-list">
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Installation through partner</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Baseline learning over 2-4 weeks</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>False-positive reduction and first weaknesses fixed</div>
+        </div>
+        <p class="core-phase-feedback">“Wir sehen endlich kontinuierlich unseren Status. Aber viele isolierte Alerts.”</p>
+      </div>
+      <div class="core-phase-card">
+        <div class="core-phase-period">Monate 6-12</div>
+        <h3 class="feat-h3">Upgrade zu SIEM</h3>
+        <div class="feat-list">
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>SIEM enabled and central log aggregation</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Custom detection rules and attack-chain correlation</div>
+        </div>
+        <p class="core-phase-feedback">“Jetzt verstehen wir den Kontext. Aber nachts reagiert niemand.”</p>
+      </div>
+      <div class="core-phase-card">
+        <div class="core-phase-period">Monat 12+</div>
+        <h3 class="feat-h3">Optional MDR</h3>
+        <div class="feat-list">
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>MDR activated and SOC takes over monitoring</div>
+          <div class="feat-list-item"><div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 2.5" stroke="#E8195A" stroke-width="1.5" stroke-linecap="round"/></svg></div>Nighttime incidents stopped and IT team relieved</div>
+        </div>
+        <p class="core-phase-feedback">“Wir schlafen ruhig. SOC reagiert, bevor wir wach sind.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-pricing-note">
+  <div class="container">
+    <div class="core-pricing-card reveal">
+      <div>
+        <div class="feat-eyebrow">Pricing note</div>
+        <h3 class="feat-h3">How to get Enginsight Core</h3>
+        <p class="feat-sub">Enginsight runs exclusively through qualified MSP/MSSP partners. Your partner installs, configures and manages Core. Prices vary depending on the number of monitored systems and complexity.</p>
+        <p class="core-pricing-why"><strong>Why through a partner?</strong> Your partner knows your infrastructure, reduces false positives and responds faster.</p>
+      </div>
+      <div class="core-pricing-actions">
+        <a class="btn-pink" href="/partner-finden">Find a partner</a>
+        <a class="btn-outline" href="/partner-modell">Learn more about the partner model</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-usecases-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Use cases</div>
+      <h2 class="section-h2">How other companies use Core</h2>
+    </div>
+    <div class="core-usecases-grid reveal reveal-delay-1">
+      <a class="core-usecase-card" href="/kritis-energieversorger"><strong>Stadtwerk (500 MA)</strong><span>“Core monitors our SCADA network. We can't patch the systems – but we immediately see suspicious access.”</span></a>
+      <a class="core-usecase-card" href="/healthcare-medizin"><strong>Krankenhaus (800 MA)</strong><span>“Medical devices on Windows 7. Core monitors the med-tech VLAN without touching the devices.”</span></a>
+      <a class="core-usecase-card" href="/produktion-manufacturing"><strong>Automotive-Zulieferer (2000 MA)</strong><span>“Core monitors Office↔Production. Ransomware attacks start in the office – we stop them at the boundary.”</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="core-faq-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center">FAQ</div>
+      <h2 class="section-h2">Frequently asked questions about Enginsight Core</h2>
+    </div>
+    <div class="core-faq-list reveal reveal-delay-1">
+      <details class="core-faq-item" open><summary>Do I need Core if I already have endpoint protection?</summary><p>Yes. EDR protects laptops and workstations. Core monitors server infrastructure and network traffic. Both complement each other.</p></details>
+      <details class="core-faq-item"><summary>How long does installation take?</summary><p>Plan for 1-2 days installation, 2-4 weeks baseline learning, and productive monitoring from day 1.</p></details>
+      <details class="core-faq-item"><summary>How many false positives?</summary><p>During the first two weeks expect roughly 20-30%. From week 4 after tuning, this usually falls below 5%.</p></details>
+      <details class="core-faq-item"><summary>On-premise possible?</summary><p>Yes. Cloud, hybrid or fully on-premise deployments are available.</p></details>
+      <details class="core-faq-item"><summary>What happens during a critical attack?</summary><p>Without MDR you get the alert in the dashboard and via email so your team responds. With MDR the SOC assesses within 15 minutes and can isolate systems if needed.</p></details>
+      <details class="core-faq-item"><summary>Difference to pentest?</summary><p>Pentest means a quarterly snapshot. Core means continuous 24/7 monitoring and detection of active attacks.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="core-final-cta">
+  <div class="container">
+    <div class="core-final-cta-card reveal">
+      <div>
+        <div class="section-label" style="color:#FF8FAF">Start now</div>
+        <h2 class="cta-h2">Start with continuous monitoring</h2>
+        <p class="cta-sub">See Enginsight Core in action. 15-minute demo with real data.</p>
+      </div>
+      <div class="core-final-actions">
+        <a class="btn-white" href="/demo">Book a demo</a>
+        <a class="btn-dark-outline" href="/partner-finden">Find a partner</a>
+        <a class="core-inline-link light" href="/whitepapers">Technical Whitepaper</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo">
+          <span class="footer-brand-mark">
+            <img class="footer-brand-img" src="../assets/images/Logo.svg" alt="Enginsight">
+          </span>
+        </div>
+        <p class="footer-desc">Continuous security operations for critical infrastructure. IDS/IPS + SIEM + MDR + Pentesting. Made in Germany.</p>
+        <div class="footer-badge-row"><span class="footer-badge">ISO 27001</span><span class="footer-badge">TÜV-tested</span><span class="footer-badge">GDPR</span><span class="footer-badge">Made in Germany</span></div>
+      </div>
+      <div><div class="footer-col-title">Products</div><div class="footer-links"><a href="./" class="active">Enginsight Core</a><a href="../index.html">Enginsight SIEM</a><a href="../index.html">Enginsight MDR</a><a href="../pages/pentesting.html">Pentesting</a><a href="../index.html">Platform overview</a></div></div>
+      <div><div class="footer-col-title">Solutions</div><div class="footer-links"><a href="#">Energy & KRITIS</a><a href="#">Healthcare</a><a href="#">Manufacturing</a><a href="#">Public Sector</a><a href="#">Finance</a><a href="#">E-Commerce</a></div></div>
+      <div><div class="footer-col-title">Company</div><div class="footer-links"><a href="/partner-modell">Partner Model</a><a href="/partner-finden">Find a Partner</a><a href="#">Become a Partner</a><a href="#">NIS2 Compliance</a><a href="#">ISO 27001</a><a href="/whitepapers">Whitepapers</a></div></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Enginsight GmbH · Jena, Germany · All rights reserved</div>
+      <div class="footer-de"><svg width="16" height="12" viewBox="0 0 16 12"><rect width="16" height="4" fill="#000"/><rect y="4" width="16" height="4" fill="#D00000"/><rect y="8" width="16" height="4" fill="#FFCE00"/></svg>Made in Germany</div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/core.js"></script>
+</body>
+</html>
