@@ -7,17 +7,6 @@
   position: relative;
 }
 
-.hero-pattern {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url("../images/pattern.png");
-  background-repeat: repeat;
-  background-size: 300px auto;
-  opacity: 0.022;
-}
-
 .hero-grad {
   position: absolute;
   inset: 0;
@@ -869,48 +858,32 @@
 .risk-finding-score { font-size: 9px; font-family: var(--font-mono); color: var(--app-text); text-align: right; }
 
 .logos-strip {
-  position: relative;
-  padding: 52px 0 48px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
   background: transparent;
   overflow: hidden;
 }
 
-.logos-strip::before,
-.logos-strip::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 114px;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(14, 14, 12, 0.18) 0,
-    rgba(14, 14, 12, 0.18) 2px,
-    transparent 2px,
-    transparent 24px
-  );
-  opacity: 0.5;
+.logos-lines {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  line-height: 0;
 }
 
-.logos-strip::before {
-  top: 0;
-  border-bottom: 1px solid rgba(14, 14, 12, 0.08);
-}
-
-.logos-strip::after {
-  bottom: 0;
-  border-top: 1px solid rgba(14, 14, 12, 0.08);
+.logos-lines-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .logos-inner {
-  position: relative;
-  z-index: 1;
-  max-width: var(--max-w);
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 64px 48px;
+  border-left: 1px solid #E6E6E6;
+  border-right: 1px solid #E6E6E6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1127,8 +1100,7 @@
 
 @media (max-width: 900px) {
   .logos-inner {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 48px 24px;
     gap: 24px;
   }
 
@@ -1194,12 +1166,16 @@
 
 @media (max-width: 640px) {
   .logos-strip {
-    padding: 40px 0 36px;
+    gap: 0;
   }
 
   .logos-list {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .logos-inner {
+    padding: 36px 20px;
   }
 
   .logo-item {

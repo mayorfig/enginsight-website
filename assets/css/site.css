@@ -204,7 +204,6 @@ section { padding: 88px 0; }
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
 }
 
 .eng-nav-inner {
@@ -267,18 +266,7 @@ section { padding: 88px 0; }
 
 .eng-nav-link.active {
   color: var(--black);
-  font-weight: 600;
-}
-
-.eng-nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 13px;
-  right: 13px;
-  height: 2px;
-  background: var(--pink);
-  border-radius: 1px;
+  font-weight: 500;
 }
 
 .eng-nav-chevron {
