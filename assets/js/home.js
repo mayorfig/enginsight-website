@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!site) return;
 
   site.observeVisuals({
-    "vis-host": animateHost,
+    "vis-hero": animateHero,
     "vis-ids": animateIDS,
     "vis-mdr": animateMDR,
     "vis-risk": animateRisk,
@@ -11,48 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("load", function () {
-    setTimeout(animateHost, 600);
+    setTimeout(animateHero, 300);
   });
 });
 
-function animateHost() {
-  setTimeout(() => { document.getElementById("cpu-arc").style.strokeDasharray = "1.9 60.9"; }, 100);
-  setTimeout(() => { document.getElementById("ram-arc").style.strokeDasharray = "10.0 52.8"; }, 200);
-  setTimeout(() => { document.getElementById("swap-arc").style.strokeDasharray = "0 62.8"; }, 300);
-
-  const segs = document.querySelectorAll(".donut-seg");
-  const data = [[81.7, 238.76], [36.8, 238.76], [33.2, 238.76], [29.2, 238.76], [18.2, 238.76], [18.2, 238.76], [18.0, 238.76]];
-  segs.forEach((seg, index) => {
-    if (index >= data.length) return;
-    setTimeout(() => {
-      seg.style.strokeDasharray = `${data[index][0] - 2} ${data[index][1] - (data[index][0] - 2)}`;
-    }, 200 + index * 80);
-  });
-
-  const totalEl = document.getElementById("vuln-total");
-  if (totalEl) {
-    let n = 0;
-    const interval = setInterval(() => {
-      n += 17;
-      if (n >= 651) {
-        clearInterval(interval);
-        n = 651;
-      }
-      totalEl.textContent = n;
-    }, 20);
-  }
-
-  setTimeout(() => { const el = document.getElementById("bar-debian"); if (el) el.style.width = "95%"; }, 400);
-  setTimeout(() => { const el = document.getElementById("bar-ubuntu"); if (el) el.style.width = "95%"; }, 550);
-
-  const idsSegs = document.querySelectorAll(".ids-donut-seg");
-  const idsData = [[94.7, 150.8], [40.7, 150.8], [12.5, 150.8]];
-  idsSegs.forEach((seg, index) => {
-    if (index >= idsData.length) return;
-    setTimeout(() => {
-      seg.style.strokeDasharray = `${idsData[index][0] - 2} ${idsData[index][1] - (idsData[index][0] - 2)}`;
-    }, 500 + index * 100);
-  });
+function animateHero() {
+  const hero = document.getElementById("vis-hero");
+  if (!hero || hero.dataset.animated) return;
+  hero.dataset.animated = "1";
+  hero.classList.add("is-active");
 }
 
 function animateIDS() {
