@@ -229,17 +229,17 @@ section { padding: 88px 0; }
 }
 
 .eng-nav-logo-mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: var(--pink);
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-shrink: 0;
 }
 
-.eng-nav-logo-mark svg { width: 16px; height: 16px; }
+.eng-nav-logo-img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
 .eng-nav-links { display: flex; align-items: center; gap: 0; }
 
 .eng-nav-link {
@@ -813,25 +813,19 @@ footer {
 .footer-brand-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
 .footer-brand-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 7px;
-  background: var(--pink);
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.footer-brand-name {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--black);
+.footer-brand-img {
+  display: block;
+  height: 30px;
+  width: auto;
 }
 
 .footer-desc {
@@ -958,6 +952,10 @@ footer {
   .eng-nav-logo {
     margin-right: auto;
   }
+
+  .eng-nav-logo-img {
+    height: 24px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1009,5 +1007,9 @@ footer {
 
   .footer-grid {
     gap: 32px;
+  }
+
+  .footer-brand-img {
+    height: 28px;
   }
 }

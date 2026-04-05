@@ -76,7 +76,7 @@ All UI data visualisations are built from pure SVG/HTML/CSS/JS. **No raw app scr
 
 ## 3. Pages — current state
 
-### 3.1 Homepage (`pages/index.html`) ✅ Complete
+### 3.1 Homepage (`index.html`) ✅ Complete
 
 **URL:** `/`
 

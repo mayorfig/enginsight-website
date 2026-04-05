@@ -14,8 +14,8 @@ code enginsight-website/
 # 2. Install the Live Server extension (if not already installed)
 #    VS Code → Extensions → search "Live Server" → install Ritwick Dey's version
 
-# 3. Right-click pages/index.html → "Open with Live Server"
-#    Browser opens at http://127.0.0.1:5500/pages/index.html
+# 3. Right-click index.html → "Open with Live Server"
+#    Browser opens at http://127.0.0.1:5500/index.html
 ```
 
 That's it. No npm install, no build step, no config.
@@ -40,8 +40,9 @@ enginsight-website/
 │       └── pattern.png      ← Enginsight brand texture (used as bg overlay)
 │
 ├── pages/
-│   ├── index.html          ← Homepage content + structure
 │   └── pentesting.html     ← Pentesting page content + structure
+│
+├── index.html              ← Homepage content + structure
 │
 └── docs/
     ├── README.md           ← This file
@@ -55,7 +56,7 @@ enginsight-website/
 
 | File | URL slug | Status |
 |------|----------|--------|
-| `pages/index.html` | `/` | ✅ Complete |
+| `index.html` | `/` | ✅ Complete |
 | `pages/pentesting.html` | `/pentesting` | ✅ Complete |
 | `pages/core.html` | `/core` | 🔲 Not built yet |
 | `pages/siem.html` | `/siem` | 🔲 Not built yet |
